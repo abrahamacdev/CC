@@ -1,0 +1,32 @@
+--- Solucion (Grafo de 2 vertices) ---
+Tiempo estimado 6 micro segundos
+
+--- Solucion (Grafo de 3 vertices) ---
+Tiempo estimado 18 micro segundos
+
+--- Solucion (Grafo de 4 vertices) ---
+Tiempo estimado 48 micro segundos
+
+--- Solucion (Grafo de 5 vertices) ---
+Tiempo estimado 216 micro segundos
+
+--- Solucion (Grafo de 6 vertices) ---
+Tiempo estimado 1.281000 ms
+
+--- Solucion (Grafo de 7 vertices) ---
+Tiempo estimado 8.206000 ms
+
+--- Solucion (Grafo de 8 vertices) ---
+Tiempo estimado 31.748000 ms
+
+--- Solucion (Grafo de 9 vertices) ---
+Tiempo estimado 269.140000 ms
+
+--- Solucion (Grafo de 10 vertices) ---
+Tiempo estimado 2901.361000 ms
+
+--- Solucion (Grafo de 11 vertices) ---
+Tiempo estimado 34109.091000 ms
+
+--- Solucion (Grafo de 12 vertices) ---
+Tiempo estimado 435730.094000 ms

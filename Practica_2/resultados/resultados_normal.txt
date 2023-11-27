@@ -1,0 +1,90 @@
+Generando ejemplares...
+Ejemplares generados: 11
+Guardando instancia 1 en './instances/instance1.txt'...
+Guardando instancia 2 en './instances/instance2.txt'...
+Guardando instancia 3 en './instances/instance3.txt'...
+Guardando instancia 4 en './instances/instance4.txt'...
+Guardando instancia 5 en './instances/instance5.txt'...
+Guardando instancia 6 en './instances/instance6.txt'...
+Guardando instancia 7 en './instances/instance7.txt'...
+Guardando instancia 8 en './instances/instance8.txt'...
+Guardando instancia 9 en './instances/instance9.txt'...
+Guardando instancia 10 en './instances/instance10.txt'...
+Guardando instancia 11 en './instances/instance11.txt'...
+--- Solucion (Grafo de 2 vertices) ---
+2
+************
+1 2 
+************
+Tiempo estimado 8 micro segundos 
+ --------------
+--- Solucion (Grafo de 3 vertices) ---
+3
+************
+1 2 3 
+************
+Tiempo estimado 11 micro segundos 
+ -------------- 
+--- Solucion (Grafo de 4 vertices) ---
+4
+************
+1 2 3 4 
+************
+Tiempo estimado 24 micro segundos 
+ -------------- 
+--- Solucion (Grafo de 5 vertices) ---
+5
+************
+1 2 3 4 5 
+************
+Tiempo estimado 89 micro segundos 
+ -------------- 
+--- Solucion (Grafo de 6 vertices) ---
+6
+************
+1 2 3 4 5 6 
+************
+Tiempo estimado 466 micro segundos 
+ -------------- 
+--- Solucion (Grafo de 7 vertices) ---
+7
+************
+1 2 3 4 5 6 7 
+************
+Tiempo estimado 3.327000 ms 
+ -------------- 
+--- Solucion (Grafo de 8 vertices) ---
+8
+************
+1 2 3 4 5 6 7 8 
+************
+Tiempo estimado 28.175000 ms 
+ -------------- 
+--- Solucion (Grafo de 9 vertices) ---
+9
+************
+1 2 3 4 5 6 7 8 9 
+************
+Tiempo estimado 260.039000 ms 
+ -------------- 
+--- Solucion (Grafo de 10 vertices) ---
+10
+************
+1 2 3 4 5 6 7 8 9 10 
+************
+Tiempo estimado 2866.567000 ms 
+ -------------- 
+--- Solucion (Grafo de 11 vertices) ---
+11
+************
+1 2 3 4 5 6 7 8 9 10 11
+************
+Tiempo estimado 33604.228000 ms
+ --------------
+--- Solucion (Grafo de 12 vertices) ---
+12
+************
+1 2 3 4 5 6 7 8 9 10 11 12
+************
+Tiempo estimado 435000.891000 ms
+ --------------

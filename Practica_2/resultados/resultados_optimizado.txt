@@ -1,0 +1,167 @@
+Generando ejemplares...
+Ejemplares generados: 11
+Guardando instancia 1 en './instances/instance1.txt'...
+Guardando instancia 2 en './instances/instance2.txt'...
+Guardando instancia 3 en './instances/instance3.txt'...
+Guardando instancia 4 en './instances/instance4.txt'...
+Guardando instancia 5 en './instances/instance5.txt'...
+Guardando instancia 6 en './instances/instance6.txt'...
+Guardando instancia 7 en './instances/instance7.txt'...
+Guardando instancia 8 en './instances/instance8.txt'...
+Guardando instancia 9 en './instances/instance9.txt'...
+Guardando instancia 10 en './instances/instance10.txt'...
+Guardando instancia 11 en './instances/instance11.txt'...
+--- Solucion (Grafo de 2 vertices) ---
+2
+************
+1 2 
+************
+Tiempo estimado 6 micro segundos 
+La asignatura 1 hará el exámen el día 1
+La asignatura 2 hará el exámen el día 2
+ -------------- 
+--- Solucion (Grafo de 11 vertices) ---
+11
+************
+1 2 3 4 5 6 7 8 9 10 11 
+************
+Tiempo estimado 34109.091000 ms 
+La asignatura 1 hará el exámen el día 1
+La asignatura 2 hará el exámen el día 2
+La asignatura 3 hará el exámen el día 3
+La asignatura 4 hará el exámen el día 4
+La asignatura 5 hará el exámen el día 5
+La asignatura 6 hará el exámen el día 6
+La asignatura 7 hará el exámen el día 7
+La asignatura 8 hará el exámen el día 8
+La asignatura 9 hará el exámen el día 9
+La asignatura 10 hará el exámen el día 10
+La asignatura 11 hará el exámen el día 11
+ -------------- 
+--- Solucion (Grafo de 12 vertices) ---
+12
+************
+1 2 3 4 5 6 7 8 9 10 11 12 
+************
+Tiempo estimado 435730.094000 ms 
+La asignatura 1 hará el exámen el día 1
+La asignatura 2 hará el exámen el día 2
+La asignatura 3 hará el exámen el día 3
+La asignatura 4 hará el exámen el día 4
+La asignatura 5 hará el exámen el día 5
+La asignatura 6 hará el exámen el día 6
+La asignatura 7 hará el exámen el día 7
+La asignatura 8 hará el exámen el día 8
+La asignatura 9 hará el exámen el día 9
+La asignatura 10 hará el exámen el día 10
+La asignatura 11 hará el exámen el día 11
+La asignatura 12 hará el exámen el día 12
+ -------------- 
+--- Solucion (Grafo de 3 vertices) ---
+3
+************
+1 2 3 
+************
+Tiempo estimado 18 micro segundos 
+La asignatura 1 hará el exámen el día 1
+La asignatura 2 hará el exámen el día 2
+La asignatura 3 hará el exámen el día 3
+ -------------- 
+--- Solucion (Grafo de 4 vertices) ---
+4
+************
+1 2 3 4 
+************
+Tiempo estimado 48 micro segundos 
+La asignatura 1 hará el exámen el día 1
+La asignatura 2 hará el exámen el día 2
+La asignatura 3 hará el exámen el día 3
+La asignatura 4 hará el exámen el día 4
+ -------------- 
+--- Solucion (Grafo de 5 vertices) ---
+5
+************
+1 2 3 4 5 
+************
+Tiempo estimado 216 micro segundos 
+La asignatura 1 hará el exámen el día 1
+La asignatura 2 hará el exámen el día 2
+La asignatura 3 hará el exámen el día 3
+La asignatura 4 hará el exámen el día 4
+La asignatura 5 hará el exámen el día 5
+ -------------- 
+--- Solucion (Grafo de 6 vertices) ---
+6
+************
+1 2 3 4 5 6 
+************
+Tiempo estimado 1.281000 ms 
+La asignatura 1 hará el exámen el día 1
+La asignatura 2 hará el exámen el día 2
+La asignatura 3 hará el exámen el día 3
+La asignatura 4 hará el exámen el día 4
+La asignatura 5 hará el exámen el día 5
+La asignatura 6 hará el exámen el día 6
+ -------------- 
+--- Solucion (Grafo de 7 vertices) ---
+7
+************
+1 2 3 4 5 6 7 
+************
+Tiempo estimado 8.206000 ms 
+La asignatura 1 hará el exámen el día 1
+La asignatura 2 hará el exámen el día 2
+La asignatura 3 hará el exámen el día 3
+La asignatura 4 hará el exámen el día 4
+La asignatura 5 hará el exámen el día 5
+La asignatura 6 hará el exámen el día 6
+La asignatura 7 hará el exámen el día 7
+ -------------- 
+--- Solucion (Grafo de 8 vertices) ---
+8
+************
+1 2 3 4 5 6 7 8 
+************
+Tiempo estimado 31.748000 ms 
+La asignatura 1 hará el exámen el día 1
+La asignatura 2 hará el exámen el día 2
+La asignatura 3 hará el exámen el día 3
+La asignatura 4 hará el exámen el día 4
+La asignatura 5 hará el exámen el día 5
+La asignatura 6 hará el exámen el día 6
+La asignatura 7 hará el exámen el día 7
+La asignatura 8 hará el exámen el día 8
+ -------------- 
+--- Solucion (Grafo de 9 vertices) ---
+9
+************
+1 2 3 4 5 6 7 8 9 
+************
+Tiempo estimado 269.140000 ms 
+La asignatura 1 hará el exámen el día 1
+La asignatura 2 hará el exámen el día 2
+La asignatura 3 hará el exámen el día 3
+La asignatura 4 hará el exámen el día 4
+La asignatura 5 hará el exámen el día 5
+La asignatura 6 hará el exámen el día 6
+La asignatura 7 hará el exámen el día 7
+La asignatura 8 hará el exámen el día 8
+La asignatura 9 hará el exámen el día 9
+ -------------- 
+--- Solucion (Grafo de 10 vertices) ---
+10
+************
+1 2 3 4 5 6 7 8 9 10 
+************
+Tiempo estimado 2901.361000 ms 
+La asignatura 1 hará el exámen el día 1
+La asignatura 2 hará el exámen el día 2
+La asignatura 3 hará el exámen el día 3
+La asignatura 4 hará el exámen el día 4
+La asignatura 5 hará el exámen el día 5
+La asignatura 6 hará el exámen el día 6
+La asignatura 7 hará el exámen el día 7
+La asignatura 8 hará el exámen el día 8
+La asignatura 9 hará el exámen el día 9
+La asignatura 10 hará el exámen el día 10
+ -------------- 
