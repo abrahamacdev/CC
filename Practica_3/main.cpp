@@ -52,7 +52,71 @@ bool oracle(Grafo& g, int k){
     return isSolvable;
 }
 
-void searchVersion(Grafo& g, int k){
+std::vector<Grafo::vertice>* searchVersion(Grafo& g, int k){
+
+    bool solvable = oracle(g, k);
+    auto finalSolution = new std::vector<Grafo::vertice>();
+
+    // Buscamos la solución
+    if (solvable){
+
+        std::vector<bool> toUse(g.numVert(), true);
+
+        // Buscamos los nodos que conforman la solución
+        int i = 0;
+        int nSelectedNodes = 0;
+        while (i<g.numVert() && nSelectedNodes != k){
+            toUse[i] = false;
+
+            // Creamos un grafo que no use al nodo i
+            Grafo tempGraph = Grafo(g, toUse);
+
+            // Si no puede resolverse quitando el nodo i es porque es necesario para la solucion
+            if (!oracle(tempGraph, k)){
+                finalSolution->push_back(i);
+                toUse[i] = true;
+            }
+
+            i++;
+        }
+    }
+
+
+    if (finalSolution->empty()) std::cout << "No existe un clique de tamaño " << k << " para el grafo elegido" << std::endl;
+    else {
+        std::cout << "Una posible solucion es (nodos):\n";
+        printVector(*finalSolution);
+        std::cout << std::endl;
+    }
+
+    return finalSolution;
+}
+
+std::vector<Grafo::vertice>* optimizationVersion(Grafo& g){
+
+    auto* finalSolution = new std::vector<Grafo::vertice>();
+
+    // Buscamos el mayor valor de k
+    bool solvable = false;
+    int k = g.numVert()+1;
+    while (!solvable && k > 0){
+        k--;
+        solvable = oracle(g, k);
+    }
+
+    // Buscamos la solución
+    if (solvable){
+        finalSolution = searchVersion(g, k);
+    }
+
+    if (finalSolution->empty()) std::cout << "No existe un clique de tamaño " << k << " para el grafo elegido" << std::endl;
+    else {
+        std::cout << "El mayor clique que puede formarse tiene tamaño " << k << " y una de las posibles soluciones es (nodos):\n";
+        printVector(*finalSolution);
+        std::cout << std::endl;
+    }
+
+    return finalSolution;
 }
 
 int main(){
@@ -66,7 +130,8 @@ int main(){
     std::cout << g << std::endl;
 
     int k = 3;
-    oracle(g, k);
+    //searchVersion(g, k);
+    optimizationVersion(g);
 
     return 0;
 }

@@ -36,8 +36,43 @@ Grafo::Grafo(const std::string& nf)
 }
 */
 
-void Grafo::initializeAdy(){
+size_t countAllTrues(const std::vector<bool>& justCopy){
+    size_t count = 0;
+    for (int i = 0; i < justCopy.size(); ++i) {
+        if (justCopy[i]) count++;
+    }
+    return count;
+}
 
+void Grafo::copyWithLimits(Grafo& g, const std::vector<bool>& justCopy){
+
+    if (g.numVert() != justCopy.size()) throw std::runtime_error("Cannot create graph");
+
+    // Determinamos el tamañoo del grafo final
+    size_t n = std::min(g.numVert(), countAllTrues(justCopy));
+
+    // Inicializamos
+    ady = {n, vector<bool>(n, false)};
+
+    int k = 0;
+    for (int i = 0; i < g.numVert(); ++i) {
+
+        // Se quiere usar el nodo i
+        if (justCopy[i]){
+
+            // Creamos las aristas que involucran al nodo i
+            int r = 0;
+            for (int j = 0; j < g.numVert(); ++j) {
+
+                if (justCopy[j]){
+                    ady[k][r] = ady[r][k] = g[i][j];
+                    r++;
+                }
+            }
+
+            k++;
+        }
+    }
 }
 
 // dirigido = true, no dirigido = false

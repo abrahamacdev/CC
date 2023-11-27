@@ -53,11 +53,12 @@ public:
    typedef size_t vertice;
    typedef std::pair<vertice, vertice> arista;
 
-   explicit Grafo(size_t n, bool diagonal = false): Grafo(n, std::vector<bool>(n, true)) {}
+   explicit Grafo(size_t n, bool diagonal = false): ady(n, vector<bool>(n, false)) {
+       if (diagonal) rellenaDiagonal();
+   }
 
-   explicit Grafo(size_t n, const std::vector<bool>& justCopy, bool diagonal = false) {
-
-       initializeAdy();
+   explicit Grafo(Grafo& g, const std::vector<bool>& justCopy, bool diagonal = false) {
+       copyWithLimits(g, justCopy);
 
        if (diagonal) rellenaDiagonal();
    }
@@ -74,7 +75,7 @@ public:
 private:
    vector< vector<bool> > ady;
 
-   void initializeAdy();
+   void copyWithLimits(Grafo& g, const std::vector<bool>& justCopy);
    void rellenaDiagonal();
 };
 
