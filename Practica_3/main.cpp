@@ -52,7 +52,7 @@ bool oracle(Grafo& g, int k){
     return isSolvable;
 }
 
-std::vector<Grafo::vertice>* searchVersion(Grafo& g, int k){
+std::vector<Grafo::vertice>* searchVersion(Grafo& g, int k, bool printSolution = true){
 
     bool solvable = oracle(g, k);
     auto finalSolution = new std::vector<Grafo::vertice>();
@@ -82,11 +82,13 @@ std::vector<Grafo::vertice>* searchVersion(Grafo& g, int k){
     }
 
 
-    if (finalSolution->empty()) std::cout << "No existe un clique de tamaño " << k << " para el grafo elegido" << std::endl;
-    else {
-        std::cout << "Una posible solucion es (nodos):\n";
-        printVector(*finalSolution);
-        std::cout << std::endl;
+    if (printSolution){
+        if (finalSolution->empty()) std::cout << "No existe un clique de tamaño " << k << " para el grafo elegido" << std::endl;
+        else {
+            std::cout << "Una posible solucion es (nodos):\n";
+            printVector(*finalSolution);
+            std::cout << std::endl;
+        }
     }
 
     return finalSolution;
@@ -106,7 +108,7 @@ std::vector<Grafo::vertice>* optimizationVersion(Grafo& g){
 
     // Buscamos la solución
     if (solvable){
-        finalSolution = searchVersion(g, k);
+        finalSolution = searchVersion(g, k, false);
     }
 
     if (finalSolution->empty()) std::cout << "No existe un clique de tamaño " << k << " para el grafo elegido" << std::endl;
@@ -119,19 +121,52 @@ std::vector<Grafo::vertice>* optimizationVersion(Grafo& g){
     return finalSolution;
 }
 
+Grafo* readGraph(const std::string& path){
+    std::ifstream fileIn(path);
+    Grafo* g = fromGraphDimacsFile(fileIn);
+    fileIn.close();
+
+    return g;
+}
+
+void saveGraph(Grafo& g, const std::string& path){
+
+    // Crea el fichero temporal
+    std::ofstream file;
+    file.open(path, std::ofstream::trunc);
+
+    // Guarda el fichero
+    toGraphDimacsFile(file, g);
+
+    // Cerramos el fichero
+    file.flush();
+    file.close();
+}
+
 int main(){
 
+    /*
     Grafo g(4);
     g[0][1] = g[1][0] = 1;
     g[0][2] = g[2][0] = 1;
     g[1][3] = g[3][1] = 1;
     g[3][2] = g[2][3] = 1;
+    */
 
-    std::cout << g << std::endl;
+    auto RUTA_GRAFO_DIMACS = "temp.dimacs";
 
-    int k = 3;
-    //searchVersion(g, k);
-    optimizationVersion(g);
+
+    Grafo* g = readGraph(RUTA_GRAFO_DIMACS);
+
+    // Muestra el grafo por pantalla
+    //std::cout << *g << std::endl;
+
+    // Versión Búsqueda
+    int k = 2;
+    searchVersion(*g, k);
+
+    // Versión Optimización
+    //optimizationVersion(*g);
 
     return 0;
 }
