@@ -55,8 +55,8 @@ Grafo* grafoPrueba(){
 int main(){
 
     // TODO Modificar con los valores a usar
-    auto RUTA_GRAFO_DIMACS = "./tests/complejo.dimacs";
-    int K = 4;
+    auto RUTA_GRAFO_DIMACS = "./tests/sencillo.dimacs";
+    int K = 2;
 
     // Lee el archivo a procesar
     Grafo* g = readDimacsGraphFile(RUTA_GRAFO_DIMACS);
