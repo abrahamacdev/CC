@@ -16,4 +16,4 @@ Grafo* fromGraphDimacsFile(std::ifstream& in);
 /**
  * Guarda la información del grafo siguiendo el formato SAT CNF DIMACS
 */
-void toSATDimacsFile(std::ofstream& os, Grafo& g);
+void toSATDimacsFile(std::ofstream& os, Grafo& g, int k);

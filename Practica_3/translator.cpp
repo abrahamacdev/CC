@@ -1,11 +1,5 @@
 #include "translator.h"
-#include "grafoMA.cpp"
 #include <bits/stdc++.h>
-
-template <typename T>
-void printVector(std::vector<T>& v){
-    std::copy(v.begin(), v.end(), std::ostream_iterator<int>(std::cout, " "));
-}
 
 int indx2cell(int fila, int col, int nVertices){
     return fila * nVertices + col;

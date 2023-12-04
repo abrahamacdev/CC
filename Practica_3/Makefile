@@ -7,7 +7,7 @@ OBJS = ${EXES:=.o}
 %: %.o
 	${CXX} ${LDFLAGS} -o $@ $^
 
-${OBJS}: grafoMA.h translator.h
+${OBJS}: grafoMA.h translator.h solvers.h
 
 all: ${EXES}
 

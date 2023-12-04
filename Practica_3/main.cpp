@@ -1,127 +1,9 @@
 
 #include "translator.cpp"
+#include "grafoMA.cpp"
+#include "solvers.cpp"
 
-std::string* executeCommand(const std::string& command){
-
-    // Open a pipe to the command
-    FILE* pipe = popen(command.c_str(), "r");
-    if (!pipe) {
-        throw std::runtime_error("popen() failed!");
-    }
-
-    // Read the command output into a buffer
-    std::array<char, 128> buffer{};
-    auto result = new std::string();
-    while (fgets(buffer.data(), buffer.size(), pipe) != nullptr) {
-        *result += buffer.data();
-    }
-
-    // Close the pipe
-    int status = pclose(pipe);
-    if (status == -1) {
-        throw std::runtime_error("pclose() failed!");
-    }
-
-    return result;
-}
-
-bool oracle(Grafo& g, int k){
-
-    // Crea el fichero temporal
-    std::ofstream file;
-    std::string path = "temp.cnf";
-    file.open(path, std::ofstream::trunc);
-
-    // Guarda el fichero
-    toSATDimacsFile(file, g, k);
-
-    // Cerramos el fichero
-    file.flush();
-    file.close();
-
-    // Executamos PicoSAT e interpretamos la salida
-    std::string* resultString = executeCommand("picosat temp.cnf");
-    bool isSolvable = (*resultString)[2] == 'S';
-
-    // Eliminamos de memoria la cadena
-    delete resultString;
-
-    // Eliminamos el fichero temporal
-    std::remove(path.c_str());
-
-    return isSolvable;
-}
-
-std::vector<Grafo::vertice>* searchVersion(Grafo& g, int k, bool printSolution = true){
-
-    bool solvable = oracle(g, k);
-    auto finalSolution = new std::vector<Grafo::vertice>();
-
-    // Buscamos la solución
-    if (solvable){
-
-        std::vector<bool> toUse(g.numVert(), true);
-
-        // Buscamos los nodos que conforman la solución
-        int i = 0;
-        int nSelectedNodes = 0;
-        while (i<g.numVert() && nSelectedNodes != k){
-            toUse[i] = false;
-
-            // Creamos un grafo que no use al nodo i
-            Grafo tempGraph = Grafo(g, toUse);
-
-            // Si no puede resolverse quitando el nodo i es porque es necesario para la solucion
-            if (!oracle(tempGraph, k)){
-                finalSolution->push_back(i);
-                toUse[i] = true;
-            }
-
-            i++;
-        }
-    }
-
-
-    if (printSolution){
-        if (finalSolution->empty()) std::cout << "No existe un clique de tamaño " << k << " para el grafo elegido" << std::endl;
-        else {
-            std::cout << "Una posible solucion es (nodos):\n";
-            printVector(*finalSolution);
-            std::cout << std::endl;
-        }
-    }
-
-    return finalSolution;
-}
-
-std::vector<Grafo::vertice>* optimizationVersion(Grafo& g){
-
-    auto* finalSolution = new std::vector<Grafo::vertice>();
-
-    // Buscamos el mayor valor de k
-    bool solvable = false;
-    int k = g.numVert()+1;
-    while (!solvable && k > 0){
-        k--;
-        solvable = oracle(g, k);
-    }
-
-    // Buscamos la solución
-    if (solvable){
-        finalSolution = searchVersion(g, k, false);
-    }
-
-    if (finalSolution->empty()) std::cout << "No existe un clique de tamaño " << k << " para el grafo elegido" << std::endl;
-    else {
-        std::cout << "El mayor clique que puede formarse tiene tamaño " << k << " y una de las posibles soluciones es (nodos):\n";
-        printVector(*finalSolution);
-        std::cout << std::endl;
-    }
-
-    return finalSolution;
-}
-
-Grafo* readGraph(const std::string& path){
+Grafo* readDimacsGraphFile(const std::string& path){
     std::ifstream fileIn(path);
     Grafo* g = fromGraphDimacsFile(fileIn);
     fileIn.close();
@@ -129,7 +11,7 @@ Grafo* readGraph(const std::string& path){
     return g;
 }
 
-void saveGraph(Grafo& g, const std::string& path){
+void saveGraph2DimacsFile(Grafo& g, const std::string& path){
 
     // Crea el fichero temporal
     std::ofstream file;
@@ -143,27 +25,52 @@ void saveGraph(Grafo& g, const std::string& path){
     file.close();
 }
 
+Grafo* grafoPrueba(){
+
+    auto *g = new Grafo(7);
+    (*g)[0][1] = (*g)[1][0] = true;
+    (*g)[0][2] = (*g)[2][0] = true;
+    (*g)[0][4] = (*g)[4][0] = true;
+    (*g)[0][5] = (*g)[5][0] = true;
+
+    (*g)[1][3] = (*g)[3][1] = true;
+    (*g)[1][4] = (*g)[4][1] = true;
+    (*g)[1][6] = (*g)[6][1] = true;
+
+    (*g)[2][3] = (*g)[3][2] = true;
+    (*g)[2][5] = (*g)[5][2] = true;
+    (*g)[2][6] = (*g)[6][2] = true;
+
+    (*g)[3][4] = (*g)[4][3] = true;
+    (*g)[3][6] = (*g)[6][3] = true;
+
+    (*g)[4][5] = (*g)[5][4] = true;
+    (*g)[4][6] = (*g)[6][4] = true;
+
+    (*g)[5][6] = (*g)[6][5] = true;
+
+    return g;
+}
+
 int main(){
 
-    /*
-    Grafo g(4);
-    g[0][1] = g[1][0] = 1;
-    g[0][2] = g[2][0] = 1;
-    g[1][3] = g[3][1] = 1;
-    g[3][2] = g[2][3] = 1;
-    */
+    // TODO Modificar con los valores a usar
+    auto RUTA_GRAFO_DIMACS = "./tests/complejo.dimacs";
+    int K = 5;
 
-    auto RUTA_GRAFO_DIMACS = "temp.dimacs";
-
-
-    Grafo* g = readGraph(RUTA_GRAFO_DIMACS);
+    // Lee el archivo a procesar
+    Grafo* g = readDimacsGraphFile(RUTA_GRAFO_DIMACS);
 
     // Muestra el grafo por pantalla
-    //std::cout << *g << std::endl;
+    std::cout << *g << std::endl;
+
+
+
+    // Versión Decisión
+    decisionVersion(*g, K);
 
     // Versión Búsqueda
-    int k = 2;
-    searchVersion(*g, k);
+    //searchVersion(*g, K);
 
     // Versión Optimización
     //optimizationVersion(*g);
