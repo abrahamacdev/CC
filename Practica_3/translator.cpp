@@ -16,19 +16,21 @@ void toGraphDimacsFile(std::ofstream& os, Grafo& g){
     // Recorremos solo la diagonal superior
     for (int i = 0; i < g.numVert(); ++i) {
 
-        // Guardamos el valor de la diagonal principal
-        edgesString += std::string("e ") + std::to_string(i) + std::string(" ") + std::to_string(i) + std::string("\n");
-        nEdges++;
+        if (g[i][i]){
+            // Guardamos el valor de la diagonal principal
+            edgesString += std::string("e ") + std::to_string(i+1) + std::string(" ") + std::to_string(i+1) + std::string("\n");
+            nEdges++;
+        }
 
         for (int j = i+1; j < g.numVert(); ++j) {
             if (g[i][j]){
-                edgesString += std::string("e ") + std::to_string(i) + std::string(" ") + std::to_string(j) + std::string("\n");
-                edgesString += std::string("e ") + std::to_string(j) + std::string(" ") + std::to_string(i) + std::string("\n");
+                edgesString += std::string("e ") + std::to_string(i+1) + std::string(" ") + std::to_string(j+1) + std::string("\n");
+                edgesString += std::string("e ") + std::to_string(j+1) + std::string(" ") + std::to_string(i+1) + std::string("\n");
                 nEdges += 2;
             }
         }
     }
-    edgesString += std::string("c Y se acabo");
+    //edgesString += std::string("c Y se acabo");
 
     // Añadimos a la cabecera el número de aristas a parsear
     headerString += std::to_string(nEdges) + std::string("\n");
@@ -84,7 +86,7 @@ Grafo* fromGraphDimacsFile(std::ifstream& in){
              */
 
             // Guarda cada arista individualmente (Grafo dirigido)
-            (*g)[from][to] = true;        // TODO Descomentar
+            (*g)[from-1][to-1] = true;        // TODO Descomentar
         }
     }
 

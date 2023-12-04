@@ -56,10 +56,13 @@ int main(){
 
     // TODO Modificar con los valores a usar
     auto RUTA_GRAFO_DIMACS = "./tests/complejo.dimacs";
-    int K = 5;
+    int K = 4;
 
     // Lee el archivo a procesar
     Grafo* g = readDimacsGraphFile(RUTA_GRAFO_DIMACS);
+
+    //Grafo* g = grafoPrueba();
+    //saveGraph2DimacsFile(*g, RUTA_GRAFO_DIMACS);
 
     // Muestra el grafo por pantalla
     std::cout << *g << std::endl;
