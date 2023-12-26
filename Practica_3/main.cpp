@@ -55,8 +55,8 @@ Grafo* grafoPrueba(){
 int main(){
 
     // TODO Modificar con los valores a usar
-    auto RUTA_GRAFO_DIMACS = "./tests/sencillo.dimacs";
-    int K = 2;
+    auto RUTA_GRAFO_DIMACS = "./tests/complejo.dimacs";
+    int K = 3;
 
     // Lee el archivo a procesar
     Grafo* g = readDimacsGraphFile(RUTA_GRAFO_DIMACS);
@@ -65,18 +65,18 @@ int main(){
     //saveGraph2DimacsFile(*g, RUTA_GRAFO_DIMACS);
 
     // Muestra el grafo por pantalla
-    std::cout << *g << std::endl;
+    //std::cout << *g << std::endl;
 
 
 
     // Versión Decisión
-    decisionVersion(*g, K);
+    //decisionVersion(*g, K);
 
     // Versión Búsqueda
     //searchVersion(*g, K);
 
     // Versión Optimización
-    //optimizationVersion(*g);
+    optimizationVersion(*g);
 
     return 0;
 }
