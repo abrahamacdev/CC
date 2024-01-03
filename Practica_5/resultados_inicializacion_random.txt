@@ -1,0 +1,176 @@
+----- Problema a280 -----
+Coste solución óptima: 2568.88
+Coste mejor solución: 6771.81
+Coste promedio solución encontrada: 7383.52
+Error absoluto promedio: 4814.63
+Error relativo promedio (fórmula): 287.421%
+Tiempo promedio necesitado (ms): 73.5
+Iteraciones realizadas: 78399
+Iteraciones max permitidas: 78399
+------------------------------
+
+----- Problema berlin52 -----
+Coste solución óptima: 7498.27
+Coste mejor solución: 10165
+Coste promedio solución encontrada: 11121.9
+Error absoluto promedio: 3623.63
+Error relativo promedio (fórmula): 148.326%
+Tiempo promedio necesitado (ms): 0
+Iteraciones realizadas: 2703
+Iteraciones max permitidas: 2703
+------------------------------
+
+----- Problema ch130 -----
+Coste solución óptima: 6044.46
+Coste mejor solución: 11104.1
+Coste promedio solución encontrada: 12935.3
+Error absoluto promedio: 6890.83
+Error relativo promedio (fórmula): 214.002%
+Tiempo promedio necesitado (ms): 7.05
+Iteraciones realizadas: 16899
+Iteraciones max permitidas: 16899
+------------------------------
+
+----- Problema ch150 -----
+Coste solución óptima: 6507.55
+Coste mejor solución: 13683.7
+Coste promedio solución encontrada: 14458
+Error absoluto promedio: 7950.42
+Error relativo promedio (fórmula): 222.172%
+Tiempo promedio necesitado (ms): 11.1
+Iteraciones realizadas: 22499
+Iteraciones max permitidas: 22499
+------------------------------
+
+----- Problema eil101 -----
+Coste solución óptima: 635.985
+Coste mejor solución: 984.981
+Coste promedio solución encontrada: 1058.18
+Error absoluto promedio: 422.19
+Error relativo promedio (fórmula): 166.384%
+Tiempo promedio necesitado (ms): 3
+Iteraciones realizadas: 10200
+Iteraciones max permitidas: 10200
+------------------------------
+
+----- Problema eil51 -----
+Coste solución óptima: 423.901
+Coste mejor solución: 559.37
+Coste promedio solución encontrada: 631.245
+Error absoluto promedio: 207.344
+Error relativo promedio (fórmula): 148.913%
+Tiempo promedio necesitado (ms): 0
+Iteraciones realizadas: 2600
+Iteraciones max permitidas: 2600
+------------------------------
+
+----- Problema eil76 -----
+Coste solución óptima: 540.002
+Coste mejor solución: 786.651
+Coste promedio solución encontrada: 846.896
+Error absoluto promedio: 306.893
+Error relativo promedio (fórmula): 156.832%
+Tiempo promedio necesitado (ms): 1
+Iteraciones realizadas: 5776
+Iteraciones max permitidas: 5776
+------------------------------
+
+----- Problema kroA100 -----
+Coste solución óptima: 20997.4
+Coste mejor solución: 38149.9
+Coste promedio solución encontrada: 47680.2
+Error absoluto promedio: 26682.9
+Error relativo promedio (fórmula): 227.077%
+Tiempo promedio necesitado (ms): 3.1
+Iteraciones realizadas: 9999
+Iteraciones max permitidas: 9999
+------------------------------
+
+----- Problema kroC100 -----
+Coste solución óptima: 20718.5
+Coste mejor solución: 39472.5
+Coste promedio solución encontrada: 45870
+Error absoluto promedio: 25151.6
+Error relativo promedio (fórmula): 221.397%
+Tiempo promedio necesitado (ms): 3
+Iteraciones realizadas: 9999
+Iteraciones max permitidas: 9999
+------------------------------
+
+----- Problema kroD100 -----
+Coste solución óptima: 20929
+Coste mejor solución: 39614.5
+Coste promedio solución encontrada: 45647.2
+Error absoluto promedio: 24718.2
+Error relativo promedio (fórmula): 218.105%
+Tiempo promedio necesitado (ms): 3
+Iteraciones realizadas: 9999
+Iteraciones max permitidas: 9999
+------------------------------
+
+----- Problema lin105 -----
+Coste solución óptima: 14073.7
+Coste mejor solución: 29306.3
+Coste promedio solución encontrada: 32629.9
+Error absoluto promedio: 18556.1
+Error relativo promedio (fórmula): 231.849%
+Tiempo promedio necesitado (ms): 3.15
+Iteraciones realizadas: 11025
+Iteraciones max permitidas: 11025
+------------------------------
+
+----- Problema pcb442 -----
+Coste solución óptima: 297.038
+Coste mejor solución: 243.315
+Coste promedio solución encontrada: 272.272
+Error absoluto promedio: -24.7659
+Error relativo promedio (fórmula): 91.6624%
+Tiempo promedio necesitado (ms): 289.15
+Iteraciones realizadas: 195363
+Iteraciones max permitidas: 195363
+------------------------------
+
+----- Problema pr76 -----
+Coste solución óptima: 106228
+Coste mejor solución: 156313
+Coste promedio solución encontrada: 184719
+Error absoluto promedio: 78490.4
+Error relativo promedio (fórmula): 173.889%
+Tiempo promedio necesitado (ms): 1
+Iteraciones realizadas: 5776
+Iteraciones max permitidas: 5776
+------------------------------
+
+----- Problema rd100 -----
+Coste solución óptima: 34.115
+Coste mejor solución: 109.902
+Coste promedio solución encontrada: 133.678
+Error absoluto promedio: 99.5626
+Error relativo promedio (fórmula): 391.844%
+Tiempo promedio necesitado (ms): 3
+Iteraciones realizadas: 9999
+Iteraciones max permitidas: 9999
+------------------------------
+
+----- Problema st70 -----
+Coste solución óptima: 670.053
+Coste mejor solución: 1064.98
+Coste promedio solución encontrada: 1194.7
+Error absoluto promedio: 524.643
+Error relativo promedio (fórmula): 178.299%
+Tiempo promedio necesitado (ms): 1
+Iteraciones realizadas: 4899
+Iteraciones max permitidas: 4899
+------------------------------
+
+----- Problema tsp225 -----
+Coste solución óptima: 3826
+Coste mejor solución: 8652.41
+Coste promedio solución encontrada: 9568.16
+Error absoluto promedio: 5742.16
+Error relativo promedio (fórmula): 250.083%
+Tiempo promedio necesitado (ms): 37.9
+Iteraciones realizadas: 50625
+Iteraciones max permitidas: 50625
+------------------------------
+
